@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects/>
+ <used-by-projects/>
+ <paths>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/annotation/api/main/jakarta.annotation-api-2.1.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-form-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/platform/jakarta.jakartaee-core-api/11.0.0/jakarta.jakartaee-core-api-11.0.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/security/enterprise/jakarta.security.enterprise-api/4.0.0/jakarta.security.enterprise-api-4.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/ws/rs/api/main/jakarta.ws.rs-api-3.1.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/websocket/jakarta.websocket-api/2.2.0/jakarta.websocket-api-2.2.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/com/fasterxml/classmate/1.5.1/classmate-1.5.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/resource/api/main/jakarta.resource-api-2.1.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/com/sun/istack/istack-commons-runtime/4.0.0/istack-commons-runtime-4.0.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/ws/rs/jakarta.ws.rs-api/4.0.0/jakarta.ws.rs-api-4.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-security-manager-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.2.0/jakarta.persistence-api-3.2.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/enterprise/concurrent/jakarta.enterprise.concurrent-api/3.1.1/jakarta.enterprise.concurrent-api-3.1.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/jboss/ejb3/main/jboss-ejb3-ext-api-2.3.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/jboss/resteasy/resteasy-jaxb-provider/main/resteasy-jaxb-provider-6.2.1.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/javax/orb/api/main/openjdk-orb-jakarta-8.1.9.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-mechanism-digest-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/com/sun/activation/jakarta.activation/2.0.1/jakarta.activation-2.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-mechanism-oauth2-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-util-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/interceptor/api/main/jakarta.interceptor-api-2.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/jboss/logging/main/jboss-logging-3.4.3.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/hsqldb/hsqldb/2.7.4/hsqldb-2.7.4.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/hibernate/hibernate-core-jakarta/5.6.15.Final/hibernate-core-jakarta-5.6.15.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-auth-server-sasl-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-plain-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/enterprise/jakarta.enterprise.cdi-api/4.1.0/jakarta.enterprise.cdi-api-4.1.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/dom4j/dom4j/2.1.3/dom4j-2.1.3.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-bearer-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-realm-jdbc-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-spnego-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-realm-token-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/ejb/jakarta.ejb-api/4.0.1/jakarta.ejb-api-4.0.1.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/servlet/jsp/jakarta.servlet.jsp-api/4.0.0/jakarta.servlet.jsp-api-4.0.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/servlet/jsp/jstl/jakarta.servlet.jsp.jstl-api/3.0.2/jakarta.servlet.jsp.jstl-api-3.0.2.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/servlet/jakarta.servlet-api/6.1.0/jakarta.servlet-api-6.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/mail/api/main/jakarta.mail-api-2.1.1.jbossorg-1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-x500-principal-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-cert-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-encryption-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-mechanism-scram-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/interceptor/jakarta.interceptor-api/2.2.0/jakarta.interceptor-api-2.2.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/validation/api/main/jakarta.validation-api-3.0.2.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-x500-cert-util-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-x500-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-anonymous-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-digest-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/xml/soap/api/main/jboss-saaj-api_3.0_spec-1.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-auth-server-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/authentication/jakarta.authentication-api/3.1.0/jakarta.authentication-api-3.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-base-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/faces/api/main/jakarta.faces-api-4.0.1.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-auth-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/jboss/logging/jboss-logging/3.4.3.Final/jboss-logging-3.4.3.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/validation/jakarta.validation-api/3.1.1/jakarta.validation-api-3.1.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/enterprise/api/main/jakarta.enterprise.lang-model-4.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-otp-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/activation/api/main/jakarta.activation-api-2.1.1.jbossorg-1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/jboss/as/controller-client/main/wildfly-controller-client-19.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-auth-server-deprecated-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-credential-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/xml/ws/api/main/jboss-jakarta-xml-ws-api_4.0_spec-1.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-auth-util-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-password-impl-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-mechanism-http-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-scram-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-x500-cert-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-audit-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/data/jakarta.data-api/1.0.1/jakarta.data-api-1.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/el/api/main/jboss-el-api_5.0_spec-4.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-json-util-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/platform/jakarta.jakartaee-web-api/11.0.0/jakarta.jakartaee-web-api-11.0.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/glassfish/jaxb/jaxb-runtime/3.0.0/jaxb-runtime-3.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/ejb/api/main/jakarta.ejb-api-4.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-ssl-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/security/jacc/api/main/jakarta.authorization-api-2.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-permission-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-external-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-provider-util-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-sso-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-keystore-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-entity-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.1.2.Final/hibernate-commons-annotations-5.1.2.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-auth-util-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/servlet/jstl/api/main/jakarta.servlet.jsp.jstl-api-3.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/websocket/api/main/jakarta.websocket-api-2.1.0-jbossorg-2.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/transaction/api/main/jakarta.transaction-api-2.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-digest-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-external-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/inject/api/main/jakarta.inject-api-2.0.1.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/glassfish/jaxb/jaxb-core/3.0.0/jaxb-core-3.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/jboss/resteasy/resteasy-multipart-provider/main/resteasy-multipart-provider-6.2.1.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/security/auth/message/api/main/jakarta.authentication-api-3.0.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/3.0.1/jakarta.xml.bind-api-3.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-mechanism-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-localuser-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-basic-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/json/bind/api/main/jakarta.json.bind-api-3.0.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/json/jakarta.json-api/2.1.3/jakarta.json-api-2.1.3.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/glassfish/jaxb/txw2/3.0.0/txw2-3.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/jboss/dmr/main/jboss-dmr-1.6.1.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-asn1-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/batch/api/main/jakarta.batch-api-2.1.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/security/enterprise/api/main/jakarta.security.enterprise-api-3.0.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/faces/jakarta.faces-api/4.1.2/jakarta.faces-api-4.1.2.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-mechanism-gssapi-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/enterprise/jakarta.enterprise.cdi-el-api/4.1.0/jakarta.enterprise.cdi-el-api-4.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-realm-ldap-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/json/bind/jakarta.json.bind-api/3.0.1/jakarta.json.bind-api-3.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-x500-cert-acme-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-credential-source-impl-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/persistence/api/main/jakarta.persistence-api-3.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-util-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/javax/wsdl4j/api/main/wsdl4j-1.6.3.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/enterprise/api/main/jakarta.enterprise.cdi-api-4.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/jms/api/main/jakarta.jms-api-3.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/enterprise/concurrent/api/main/jakarta.enterprise.concurrent-api-3.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/hibernate/validator/main/hibernate-validator-8.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-oauth2-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/common/main/wildfly-common-1.6.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-security-manager-action-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-client-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/servlet/api/main/jakarta.servlet-api-6.0.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/org/jboss/jandex/2.4.2.Final/jandex-2.4.2.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/el/jakarta.el-api/6.0.1/jakarta.el-api-6.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-auth-server-http-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/websocket/api/main/jakarta.websocket-client-api-2.1.0-jbossorg-2.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/websocket/jakarta.websocket-client-api/2.2.0/jakarta.websocket-client-api-2.2.0.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/activation/jakarta.activation-api/2.0.1/jakarta.activation-api-2.0.1.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/enterprise/jakarta.enterprise.lang-model/4.1.0/jakarta.enterprise.lang-model-4.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-credential-store-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-realm-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/xml/bind/api/main/jakarta.xml.bind-api-4.0.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/servlet/jsp/api/main/jakarta.servlet.jsp-api-3.1.0.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/json/api/main/jakarta.json-api-2.1.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-gssapi-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/jakarta/servlet/jstl/api/main/jakarta.servlet.jsp.jstl-3.0.0.jar">
+   <libraries>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/c-1_0-rt.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/c-1_0.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/c-1_2.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/c.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/fmt-1_0-rt.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/fmt-1_0.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/fmt-1_1.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/fmt.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/fn-1_1.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/fn.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/permittedtaglibs-1_1.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/permittedtaglibs.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/scriptfree-1_1.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/scriptfree.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/sql-1_0-rt.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/sql-1_0.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/sql-1_1.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/sql.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/x-1_0-rt.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/x-1_0.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/x-1_1.tld" project="Car-Selling"/>
+    </library>
+    <library class="tld">
+     <id class="model-object"
+      path="FileSystems/lib-jakarta.servlet.jsp.jstl-3.0.0.jar/meta-inf/x.tld" project="Car-Selling"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-sasl-gs2-2.0.0.Final.jar"/>
+  <path value="/Users/HES-SO/rootJakartaEE/tools/wildfly-27.0.0.Final/modules/system/layers/base/org/wildfly/security/elytron-base/main/wildfly-elytron-http-digest-2.0.0.Final.jar"/>
+ </paths>
+ <includes/>
+ <aliases/>
+ <uris/>
+</kb-project>

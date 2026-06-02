@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;TP12-WEB-EJB-PC-EPC-E-solution-stateful-EPC&apos;" deleteContents="false" description="Delete resource &apos;TP12-WEB-EJB-PC-EPC-E-solution-stateful-EPC&apos;" element1="/TP12-WEB-EJB-PC-EPC-E-solution-stateful-EPC" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1779970486067"/>
+</session>

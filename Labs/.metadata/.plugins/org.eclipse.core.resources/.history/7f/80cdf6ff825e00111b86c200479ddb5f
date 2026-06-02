@@ -1,0 +1,32 @@
+# 1. Compiled source / Binary folders
+# You almost NEVER want to track the bin folder
+/bin/
+/obj/
+/out/
+/build/
+
+# 2. macOS specific files
+# These are hidden files your Mac generates automatically
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# 3. IDE and Editor directories
+# Prevents your personal editor settings from overriding your team's
+.vscode/
+.idea/
+*.swp
+*.suo
+*.user
+
+# 4. Logs and databases
+*.log
+*.sqlite
+/target/
+
+# Eclipse IDE files
+.project
+.classpath
+.settings/
