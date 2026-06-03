@@ -1,84 +1,66 @@
 package ch.hevs.businessobject;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
+import java.util.List;
 
-// This is a test comment
 @Entity
 public class Account {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
-	private Long id;
-	private String number;
-	private long saldo;	
-	private String description;
-	
-	// relations
-	@ManyToOne
-	private Client owner;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int aid;
+    private String firstname;
+    private String lastname;
+    private String phoneNumber;
+    private String email;
 
-	// id 
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	// number
-	public String getNumber() {
-		return number;
-	}
-	public void setNumber(String number) {
-		this.number = number;
-	}
-	
-	// saldo	
-	public long getSaldo() {
-		return saldo;
-	}
-	public void setSaldo(long saldo) {
-		this.saldo = saldo;
-	}
-	
-	// description
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	// owner (from Client)
-	public Client getOwner() {
-		return owner;
-	}
-	public void setOwner(Client owner) {
-		this.owner = owner;
-	}
-	
-	// methods
-	public void debit(int amount) {
-		long newAmount = getSaldo() - amount;
-		setSaldo(newAmount);
-	}
-	
-	public void credit(int amount) {
-		setSaldo(getSaldo() + amount);
-	}
+    @OneToOne(mappedBy = "account")
+    private Seller seller;
 
-	// constructors
-	public Account() {
-	}
-	public Account(String number, long saldo, Client owner,
-			String description) {
-		this.number = number;
-		this.saldo = saldo;
-		this.owner = owner;
-		this.description = description;
-	}
+    @OneToOne(mappedBy = "account")
+    private Buyer buyer;
+
+    @OneToMany(mappedBy = "account")
+    private List<BankAccount> bankAccounts;
+
+    public int getAid() {
+        return aid;
+    }
+
+    public void setAid(int aid) {
+        this.aid = aid;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
