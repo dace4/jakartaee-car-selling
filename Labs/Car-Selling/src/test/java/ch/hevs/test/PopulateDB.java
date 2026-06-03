@@ -1,52 +1,95 @@
 package ch.hevs.test;
 
-import java.sql.SQLException;
-
-import org.junit.Test;
-
 import ch.hevs.businessobject.Account;
-import ch.hevs.businessobject.Client;
+import ch.hevs.businessobject.Buyer;
+import ch.hevs.businessobject.Car;
+import ch.hevs.businessobject.CarBrand;
+import ch.hevs.businessobject.Color;
+import ch.hevs.businessobject.ModelYear;
+import ch.hevs.businessobject.Seller;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import junit.framework.TestCase;
 
-public class PopulateDB extends TestCase {
+public class PopulateDB {
 
-	@Test
-	public void test() throws SQLException, ClassNotFoundException {
-		
-		EntityTransaction tx = null;
-		try {
-			
-			EntityManagerFactory emf = Persistence.createEntityManagerFactory("bankPU_unitTest");
-			EntityManager em = emf.createEntityManager();
-			tx = em.getTransaction();
-			tx.begin();
-		
-			Client c1 = new Client("Zinedine", "Zidane");
-			Account a1 = new Account("1000", 10000, c1, "Compte Courant");
-			
-			Client c2 = new Client("Michel", "Platini");
-			Account a2 = new Account("1001", 20000, c2, "Compte Courant");
-			Account a3 = new Account("1003", 1000, c2, "Livret A");
-	
-			Client c3 = new Client("Jean-Pierre", "Papin");
-			Account a4 = new Account("1002", 30000, c3, "Compte Courant");
-	
-			em.persist(c1);
-			em.persist(c2);
-			em.persist(c3);
-			
-			em.persist(a1);
-			em.persist(a2);
-			em.persist(a3);
-			em.persist(a4);
-			tx.commit();
+    public static void main(String[] args) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("carSellingPU"); // Check your persistence.xml unit name
+        EntityManager em = emf.createEntityManager();
+        
+        try {
+            em.getTransaction().begin();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+            CarBrand bmw = new CarBrand();
+            bmw.setName("BMW");
+            em.persist(bmw);
+
+            CarBrand audi = new CarBrand();
+            audi.setName("Audi");
+            em.persist(audi);
+            
+            CarBrand merc = new CarBrand();
+            merc.setName("Mercedes");
+            em.persist(merc);
+            
+            Color blackColor = new Color();
+            blackColor.setColorName("Black");
+            em.persist(blackColor);
+            
+            Color blue = new Color();
+            blue.setColorName("Blue");
+            em.persist(blue);
+            
+            ModelYear newestModelYear = new ModelYear();
+            newestModelYear.setYear(2026);
+            em.persist(newestModelYear);
+
+            // 3. Create a Seller (Inherits from Account)
+            Account accountSellerAccount = new Account();
+            accountSellerAccount.setFirstname("John");
+            accountSellerAccount.setLastname("Doe");
+            accountSellerAccount.setPhoneNumber("+41765239065");
+            accountSellerAccount.setEmail("john.doe@gmail.com");
+            em.persist(accountSellerAccount);
+            
+            Seller seller1 = new Seller();
+            seller1.setAccount(accountSellerAccount);
+
+            // 4. Create Cars and link them
+            Car car1 = new Car();
+            car1.setCarBrand(merc);
+            car1.setColor(blackColor);
+            car1.setModelYear(newestModelYear);
+            car1.setSeller(seller1);
+            car1.setMiles(5000);
+            car1.setPrice(25000f);
+            car1.setHp(500);
+            em.persist(car1);
+            
+
+            // 5. Create a Buyer (Inherits from Account)
+            Account buyerAccount = new Account();
+            buyerAccount.setFirstname("Alice");
+            buyerAccount.setLastname("McScotty");
+            buyerAccount.setPhoneNumber("+41790052354");
+            buyerAccount.setEmail("alice.mcscotty@gmx.com");
+            em.persist(buyerAccount);
+            
+            Buyer buyer1 = new Buyer();
+            buyer1.setAccount(buyerAccount);
+            
+
+            em.getTransaction().commit();
+            System.out.println("Database successfully populated with Car Selling data!");
+            
+        } catch (Exception e) {
+            if (em.getTransaction().isActive()) {
+                em.getTransaction().rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            em.close();
+            emf.close();
+        }
+    }
 }

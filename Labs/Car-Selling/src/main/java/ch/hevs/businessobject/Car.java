@@ -28,8 +28,28 @@ public class Car {
     private int miles;
     private float price;
     private int hp;
+    
+    
+    
 
-    public int getCid() {
+    public Car() {
+		
+	}
+
+	public Car(int cid, CarBrand carBrand, Color color, ModelYear modelYear, Seller seller, int miles, float price,
+			int hp) {
+		super();
+		this.cid = cid;
+		this.carBrand = carBrand;
+		this.color = color;
+		this.modelYear = modelYear;
+		this.seller = seller;
+		this.miles = miles;
+		this.price = price;
+		this.hp = hp;
+	}
+
+	public int getCid() {
         return cid;
     }
 

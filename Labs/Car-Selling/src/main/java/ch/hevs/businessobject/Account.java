@@ -23,8 +23,23 @@ public class Account {
 
     @OneToMany(mappedBy = "account")
     private List<BankAccount> bankAccounts;
+    
+    public Account() {
+    	
+    }
 
-    public int getAid() {
+    public Account(int aid, String firstname, String lastname, String phoneNumber, String email,
+			 List<BankAccount> bankAccounts) {
+		super();
+		this.aid = aid;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.bankAccounts = bankAccounts;
+	}
+
+	public int getAid() {
         return aid;
     }
 
