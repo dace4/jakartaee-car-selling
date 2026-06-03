@@ -5,7 +5,7 @@
              version="3.0">
             
 <!-- 	For use with the application server -->
-	<persistence-unit name="bankPU">
+	<persistence-unit name="carSellingPU">
 		<jta-data-source>java:/labsDS</jta-data-source>
 		<class>ch.hevs.businessobject.Account</class>
 		<class>ch.hevs.businessobject.BankAccount</class>
@@ -25,7 +25,7 @@
 	</persistence-unit>
              
 <!-- 	For use with JUnit to populate the BD -->	            
-    <persistence-unit name="bankPU_unitTest">
+    <persistence-unit name="carSellingPU_unitTest">
 	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     	<class>ch.hevs.businessobject.Account</class>
 		<class>ch.hevs.businessobject.BankAccount</class>

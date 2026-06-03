@@ -4,17 +4,16 @@ import java.io.Serializable;
 import java.util.List;
 
 import ch.hevs.businessobject.Account;
-import ch.hevs.businessobject.BankAccount;
 import ch.hevs.businessobject.Buyer;
 import ch.hevs.businessobject.Car;
 import ch.hevs.businessobject.CarBrand;
 import ch.hevs.businessobject.Color;
 import ch.hevs.businessobject.ModelYear;
 import ch.hevs.businessobject.Seller;
+
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.PersistenceContextType;
 import jakarta.transaction.Transactional;
 
 @RequestScoped
@@ -22,7 +21,7 @@ public class CarSelling implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @PersistenceContext(unitName = "carSellingPU", type = PersistenceContextType.TRANSACTION)
+    @PersistenceContext(unitName = "carSellingPU")
     private EntityManager em;
 
     public List<Car> getCars() {
@@ -41,34 +40,34 @@ public class CarSelling implements Serializable {
         return em.createQuery("FROM Account", Account.class).getResultList();
     }
 
-    public Car getCar(int cid) {
-        return em.createQuery("FROM Car c WHERE c.cid = :cid", Car.class)
-                 .setParameter("cid", cid)
-                 .getSingleResult();
+    public List<CarBrand> getCarBrands() {
+        return em.createQuery("FROM CarBrand", CarBrand.class).getResultList();
     }
 
-    public Account getAccount(int aid) {
-        return em.createQuery("FROM Account a WHERE a.aid = :aid", Account.class)
-                 .setParameter("aid", aid)
-                 .getSingleResult();
+    public List<Color> getColors() {
+        return em.createQuery("FROM Color", Color.class).getResultList();
     }
 
-    @Transactional(Transactional.TxType.REQUIRED)
+    public List<ModelYear> getModelYears() {
+        return em.createQuery("FROM ModelYear", ModelYear.class).getResultList();
+    }
+
+    @Transactional
     public void addCar(Car car) {
         em.persist(car);
     }
 
-    @Transactional(Transactional.TxType.REQUIRED)
+    @Transactional
     public void addAccount(Account account) {
         em.persist(account);
     }
 
-    @Transactional(Transactional.TxType.REQUIRED)
+    @Transactional
     public void addSeller(Seller seller) {
         em.persist(seller);
     }
 
-    @Transactional(Transactional.TxType.REQUIRED)
+    @Transactional
     public void addBuyer(Buyer buyer) {
         em.persist(buyer);
     }
