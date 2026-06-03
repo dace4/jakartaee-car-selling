@@ -1,77 +1,39 @@
 package ch.hevs.businessobject;
 
+import jakarta.persistence.*;
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-
-
-
 @Entity
-public class Client {
+public class Seller {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
-	private long id;
-	private String lastname;
-	private String firstname;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int sid;
 
-	// relations
-	@OneToMany(mappedBy = "owner")
-	private List<Account> accounts;
-	
-	// id
-	public long getId() {
-		return id;
-	}
-	public void setId(long id) {
-		this.id = id;
-	}
+    @OneToOne
+    @JoinColumn(name = "AID")
+    private Account account;
 
-	// firstname
-	public String getFirstname() {
-		return firstname;
-	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	
-	// lastname
-	public String getLastname() {
-		return lastname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+    @OneToMany(mappedBy = "seller")
+    private List<Car> cars;
+    
+    public Seller() {
+    	
+    }
 
-	// accounts (From Account)
-	public List<Account> getAccounts() {
-		return accounts;
-	}
-	public void setAccounts(List<Account> accounts) {
-		this.accounts = accounts;
-	}
-	
-	// helper methods
-	public void addAccount(Account a) {
-		accounts.add(a);
-		a.setOwner(this);
-	}
+    public int getSid() {
+        return sid;
+    }
 
-	// constructors
-	public Client() {
-	}
-	public Client(String firstname, String lastname) {
-		this.lastname = lastname;
-		this.firstname = firstname;
-	}
+    public void setSid(int sid) {
+        this.sid = sid;
+    }
 
-	@Override
-	public String toString() {
-		String result = id + "-" + lastname + "-" + firstname;
-		return result;
-	}
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 }
