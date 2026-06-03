@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;TP11-WEB-CDI-JPA-solution&apos;" deleteContents="false" description="Delete resource &apos;TP11-WEB-CDI-JPA-solution&apos;" element1="/TP11-WEB-CDI-JPA-solution" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1780404770823"/>&#x0A;<refactoring comment="Delete resource &apos;RemoteSystemsTempFiles&apos;" deleteContents="false" description="Delete resource &apos;RemoteSystemsTempFiles&apos;" element1="/RemoteSystemsTempFiles" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1780404846078"/>
-</session>

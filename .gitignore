@@ -57,3 +57,6 @@ database/db/
 **/*.war
 **/*.ear
 **/*.jar
+
+# Ignore Eclipse workspace metadata
+**/Labs/.metadata/
