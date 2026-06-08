@@ -10,11 +10,14 @@ import ch.hevs.businessobject.Seller;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import org.junit.Test;
 
 public class PopulateDB {
+	
+	@Test
+	public void populate() {
 
-    public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("carSellingPU"); // Check your persistence.xml unit name
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("carSellingPU_unitTest"); // Check your persistence.xml unit name
         EntityManager em = emf.createEntityManager();
         
         try {
@@ -54,6 +57,7 @@ public class PopulateDB {
             
             Seller seller1 = new Seller();
             seller1.setAccount(accountSellerAccount);
+            em.persist(seller1);
 
             // 4. Create Cars and link them
             Car car1 = new Car();
@@ -77,6 +81,7 @@ public class PopulateDB {
             
             Buyer buyer1 = new Buyer();
             buyer1.setAccount(buyerAccount);
+            em.persist(buyer1);
             
 
             em.getTransaction().commit();
