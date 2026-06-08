@@ -1,8 +1,8 @@
 package ch.hevs.businessobject;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
 import java.util.List;
+
+import jakarta.persistence.*;
 
 @Entity
 public class Account {
@@ -12,18 +12,18 @@ public class Account {
     private int aid;
     private String firstname;
     private String lastname;
-    private String phoneNumber;
-    private String email;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "phoneNumber", column = @Column(name = "phoneNumber")),
+            @AttributeOverride(name = "email", column = @Column(name = "email")) })
+    private ContactInfo contactInfo = new ContactInfo();
+    private int balance;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     private Seller seller;
 
-    @OneToOne(mappedBy = "account")
+    @OneToOne(mappedBy = "account", cascade = CascadeType.ALL, orphanRemoval = true)
     private Buyer buyer;
-
-    @OneToMany(mappedBy = "account")
-    private List<BankAccount> bankAccounts;
-
     public int getAid() {
         return aid;
     }
@@ -49,18 +49,50 @@ public class Account {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return contactInfo.getPhoneNumber();
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        contactInfo.setPhoneNumber(phoneNumber);
     }
 
     public String getEmail() {
-        return email;
+        return contactInfo.getEmail();
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        contactInfo.setEmail(email);
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    public ContactInfo getContactInfo() {
+        return contactInfo;
+    }
+
+    public void setContactInfo(ContactInfo contactInfo) {
+        this.contactInfo = contactInfo;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
+    }
+
+    public Buyer getBuyer() {
+        return buyer;
+    }
+
+    public void setBuyer(Buyer buyer) {
+        this.buyer = buyer;
     }
 }
