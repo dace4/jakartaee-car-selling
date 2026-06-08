@@ -1,7 +1,6 @@
 package ch.hevs.test;
 
 import ch.hevs.businessobject.Account;
-import ch.hevs.businessobject.BankAccount;
 import ch.hevs.businessobject.Buyer;
 import ch.hevs.businessobject.Car;
 import ch.hevs.businessobject.CarBrand;
@@ -48,22 +47,18 @@ public class PopulateDB {
             newestModelYear.setYear(2026);
             em.persist(newestModelYear);
 
-            // 3. Create a Seller (Inherits from Account)
+            // 3. Create a Seller
             Account accountSellerAccount = new Account();
             accountSellerAccount.setFirstname("John");
             accountSellerAccount.setLastname("Doe");
             accountSellerAccount.setPhoneNumber("+41765239065");
             accountSellerAccount.setEmail("john.doe@gmail.com");
-            em.persist(accountSellerAccount);
-            
-            BankAccount sellerBankAccount = new BankAccount();
-            sellerBankAccount.setAccount(accountSellerAccount);
-            sellerBankAccount.setSaldo(5000);
-            em.persist(sellerBankAccount);
-            
+            accountSellerAccount.setBalance(5000);
+
             Seller seller1 = new Seller();
             seller1.setAccount(accountSellerAccount);
-            em.persist(seller1);
+            accountSellerAccount.setSeller(seller1);
+            em.persist(accountSellerAccount);
 
             // 4. Create Cars and link them
             Car car1 = new Car();
@@ -77,22 +72,18 @@ public class PopulateDB {
             em.persist(car1);
             
 
-            // 5. Create a Buyer (Inherits from Account)
+            // 5. Create a Buyer
             Account buyerAccount = new Account();
             buyerAccount.setFirstname("Alice");
             buyerAccount.setLastname("McScotty");
             buyerAccount.setPhoneNumber("+41790052354");
             buyerAccount.setEmail("alice.mcscotty@gmx.com");
-            em.persist(buyerAccount);
-            
-            BankAccount buyerBankAccount = new BankAccount();
-            buyerBankAccount.setAccount(buyerAccount);
-            buyerBankAccount.setSaldo(60000);
-            em.persist(buyerBankAccount);
-            
+            buyerAccount.setBalance(60000);
+
             Buyer buyer1 = new Buyer();
             buyer1.setAccount(buyerAccount);
-            em.persist(buyer1);
+            buyerAccount.setBuyer(buyer1);
+            em.persist(buyerAccount);
             
 
             em.getTransaction().commit();

@@ -3,11 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
          version="5.0"> 
-  <display-name>TestBanquePC_EPC</display-name>
+  <display-name>Car Selling</display-name>
   <description></description>
   <context-param>
     <param-name>jakarta.faces.DEFAULT_SUFFIX</param-name>
-    <param-value>.jsp</param-value>
+    <param-value>.xhtml</param-value>
   </context-param>
   <context-param>
     <param-name>facelets.VIEW_MAPPINGS</param-name>
@@ -34,12 +34,32 @@
     <url-pattern>/faces/*</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
-    <welcome-file>welcomeBank.xhtml</welcome-file>
+    <welcome-file>index.xhtml</welcome-file>
   </welcome-file-list>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Protected Car Selling App</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+      <role-name>visitor</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Car Selling Access</realm-name>
+  </login-config>
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
+  <security-role>
+    <role-name>visitor</role-name>
+  </security-role>
   <env-entry>
     <env-entry-name>jsf/ClientSideSecretKey</env-entry-name>
     <env-entry-type>java.lang.String</env-entry-type>
     <env-entry-value>am9kZXRlcHV0b2hhY2tlcg==</env-entry-value>
   </env-entry>
-  <display-name>TP12-WEB-EJB-PC-EPC-DAO-E</display-name>
+  <display-name>Car Selling</display-name>
 </web-app>

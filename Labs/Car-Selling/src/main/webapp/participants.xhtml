@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets"
+    xmlns:h="jakarta.faces.html"
+    xmlns:f="jakarta.faces.core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="title">Marketplace Participants</ui:define>
+    <ui:define name="content">
+        <h2>Owners and Buyers</h2>
+
+        <h3>Sellers</h3>
+        <h:dataTable value="#{carSellingBean.sellers}" var="seller" border="1" cellpadding="6"
+            rendered="#{not empty carSellingBean.sellers}">
+            <h:column>
+                <f:facet name="header">Seller ID</f:facet>
+                #{seller.sid}
+            </h:column>
+            <h:column>
+                <f:facet name="header">First name</f:facet>
+                #{seller.account.firstname}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Last name</f:facet>
+                #{seller.account.lastname}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email</f:facet>
+                #{seller.account.contactInfo.email}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Phone</f:facet>
+                #{seller.account.contactInfo.phoneNumber}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Balance</f:facet>
+                #{seller.account.balance}
+            </h:column>
+        </h:dataTable>
+
+        <h3>Buyers</h3>
+        <h:dataTable value="#{carSellingBean.buyers}" var="buyer" border="1" cellpadding="6"
+            rendered="#{not empty carSellingBean.buyers}">
+            <h:column>
+                <f:facet name="header">Buyer ID</f:facet>
+                #{buyer.bid}
+            </h:column>
+            <h:column>
+                <f:facet name="header">First name</f:facet>
+                #{buyer.account.firstname}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Last name</f:facet>
+                #{buyer.account.lastname}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Email</f:facet>
+                #{buyer.account.contactInfo.email}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Phone</f:facet>
+                #{buyer.account.contactInfo.phoneNumber}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Balance</f:facet>
+                #{buyer.account.balance}
+            </h:column>
+        </h:dataTable>
+
+        <h3>Reference Data</h3>
+        <h:panelGrid columns="3" cellpadding="16">
+            <h:panelGroup>
+                <strong>Brands</strong>
+                <h:dataTable value="#{carSellingBean.carBrands}" var="brand" border="1" cellpadding="6">
+                    <h:column>#{brand.name}</h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <h:panelGroup>
+                <strong>Colors</strong>
+                <h:dataTable value="#{carSellingBean.colors}" var="color" border="1" cellpadding="6">
+                    <h:column>#{color.colorName}</h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <h:panelGroup>
+                <strong>Model years</strong>
+                <h:dataTable value="#{carSellingBean.modelYears}" var="year" border="1" cellpadding="6">
+                    <h:column>#{year.year}</h:column>
+                </h:dataTable>
+            </h:panelGroup>
+        </h:panelGrid>
+
+        <h:form>
+            <h:commandLink action="index">
+                <h:outputText value="Back to overview" />
+            </h:commandLink>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

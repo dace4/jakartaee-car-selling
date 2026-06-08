@@ -16,10 +16,6 @@ public class Seller {
 
     @OneToMany(mappedBy = "seller")
     private List<Car> cars;
-    
-    public Seller() {
-    	
-    }
 
     public int getSid() {
         return sid;

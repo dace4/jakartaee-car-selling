@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets"
+    xmlns:h="jakarta.faces.html"
+    xmlns:f="jakarta.faces.core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="title">Car Inventory</ui:define>
+    <ui:define name="content">
+        <h2>Car Inventory</h2>
+        <p>All available cars currently listed in the marketplace.</p>
+
+        <h:form>
+            <h3>Add a Car</h3>
+            <h:panelGrid columns="2" cellpadding="8" style="margin-bottom:16px;">
+                <h:outputLabel for="seller" value="Seller" />
+                <h:selectOneMenu id="seller" value="#{carSellingBean.selectedSellerId}">
+                    <f:selectItem itemValue="0" itemLabel="Select a seller" />
+                    <f:selectItems value="#{carSellingBean.sellers}" var="seller"
+                        itemValue="#{seller.sid}"
+                        itemLabel="#{seller.account.firstname} #{seller.account.lastname}" />
+                </h:selectOneMenu>
+
+                <h:outputLabel for="brand" value="Brand" />
+                <h:selectOneMenu id="brand" value="#{carSellingBean.selectedCarBrandId}">
+                    <f:selectItem itemValue="0" itemLabel="Select a brand" />
+                    <f:selectItems value="#{carSellingBean.carBrands}" var="brand"
+                        itemValue="#{brand.cbid}" itemLabel="#{brand.name}" />
+                </h:selectOneMenu>
+
+                <h:outputLabel for="color" value="Color" />
+                <h:selectOneMenu id="color" value="#{carSellingBean.selectedColorId}">
+                    <f:selectItem itemValue="0" itemLabel="Select a color" />
+                    <f:selectItems value="#{carSellingBean.colors}" var="color"
+                        itemValue="#{color.coid}" itemLabel="#{color.colorName}" />
+                </h:selectOneMenu>
+
+                <h:outputLabel for="year" value="Model year" />
+                <h:selectOneMenu id="year" value="#{carSellingBean.selectedModelYearId}">
+                    <f:selectItem itemValue="0" itemLabel="Select a year" />
+                    <f:selectItems value="#{carSellingBean.modelYears}" var="year"
+                        itemValue="#{year.mid}" itemLabel="#{year.year}" />
+                </h:selectOneMenu>
+
+                <h:outputLabel for="miles" value="Mileage" />
+                <h:inputText id="miles" value="#{carSellingBean.newCarMiles}" />
+
+                <h:outputLabel for="price" value="Price" />
+                <h:inputText id="price" value="#{carSellingBean.newCarPrice}" />
+
+                <h:outputLabel for="hp" value="Horsepower" />
+                <h:inputText id="hp" value="#{carSellingBean.newCarHp}" />
+            </h:panelGrid>
+            <h:commandButton value="Add car" action="#{carSellingBean.addCar}" />
+            <br />
+            <br />
+
+            <h3>Buy a Car</h3>
+            <h:panelGrid columns="2" cellpadding="8" style="margin-bottom:16px;">
+                <h:outputLabel for="buyer" value="Buyer" />
+                <h:selectOneMenu id="buyer" value="#{carSellingBean.selectedBuyerId}">
+                    <f:selectItem itemValue="0" itemLabel="Select a buyer" />
+                    <f:selectItems value="#{carSellingBean.buyers}" var="buyer"
+                        itemValue="#{buyer.bid}"
+                        itemLabel="#{buyer.account.firstname} #{buyer.account.lastname}" />
+                </h:selectOneMenu>
+            </h:panelGrid>
+
+            <h:outputText value="#{carSellingBean.message}"
+                rendered="#{not empty carSellingBean.message}" />
+            <br />
+            <br />
+
+            <h:dataTable value="#{carSellingBean.cars}" var="car" border="1" cellpadding="6"
+                rendered="#{not empty carSellingBean.cars}">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    #{car.cid}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Brand</f:facet>
+                    #{car.carBrand.name}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Color</f:facet>
+                    #{car.color.colorName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Year</f:facet>
+                    #{car.modelYear.year}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Horsepower</f:facet>
+                    #{car.hp}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Mileage</f:facet>
+                    #{car.miles}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Price</f:facet>
+                    #{car.price}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Seller</f:facet>
+                    #{car.seller.account.firstname} #{car.seller.account.lastname}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:commandButton value="Buy" action="#{carSellingBean.buyCar(car.cid)}" />
+                    <h:commandButton value="Remove"
+                        action="#{carSellingBean.removeCarAsAdmin(car.cid)}"
+                        rendered="#{carSellingBean.admin}" />
+                </h:column>
+            </h:dataTable>
+        </h:form>
+
+        <h:outputText value="No cars are currently available."
+            rendered="#{empty carSellingBean.cars}" />
+
+        <h:form style="margin-top:16px;">
+            <h:commandLink action="index">
+                <h:outputText value="Back to overview" />
+            </h:commandLink>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

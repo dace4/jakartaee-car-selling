@@ -4,17 +4,19 @@ import java.io.Serializable;
 import java.util.List;
 
 import ch.hevs.businessobject.Account;
-import ch.hevs.businessobject.BankAccount;
 import ch.hevs.businessobject.Buyer;
 import ch.hevs.businessobject.Car;
 import ch.hevs.businessobject.CarBrand;
 import ch.hevs.businessobject.Color;
 import ch.hevs.businessobject.ModelYear;
 import ch.hevs.businessobject.Seller;
+import ch.hevs.exception.BankException;
 
 import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.transaction.Transactional;
 
 @RequestScoped
@@ -24,6 +26,9 @@ public class CarSelling implements Serializable {
 
     @PersistenceContext(unitName = "carSellingPU")
     private EntityManager em;
+
+    @Inject
+    private HttpServletRequest request;
 
     public List<Car> getCars() {
         return em.createQuery("FROM Car", Car.class).getResultList();
@@ -59,6 +64,28 @@ public class CarSelling implements Serializable {
     }
 
     @Transactional
+    public void addCar(int sellerId, int carBrandId, int colorId, int modelYearId, int miles, float price, int hp) {
+        Seller seller = em.find(Seller.class, sellerId);
+        CarBrand carBrand = em.find(CarBrand.class, carBrandId);
+        Color color = em.find(Color.class, colorId);
+        ModelYear modelYear = em.find(ModelYear.class, modelYearId);
+
+        if (seller == null || carBrand == null || color == null || modelYear == null) {
+            throw new IllegalArgumentException("Please select valid car data before saving.");
+        }
+
+        Car car = new Car();
+        car.setSeller(seller);
+        car.setCarBrand(carBrand);
+        car.setColor(color);
+        car.setModelYear(modelYear);
+        car.setMiles(miles);
+        car.setPrice(price);
+        car.setHp(hp);
+        em.persist(car);
+    }
+
+    @Transactional
     public void addAccount(Account account) {
         em.persist(account);
     }
@@ -75,62 +102,54 @@ public class CarSelling implements Serializable {
     
     @Transactional
     public void buyCar(int carId, int buyerId) {
-    	// 1. Retrieve the target vehicle and identify its current seller
+        // Buying a car must be atomic: either money moves and the car is removed,
+        // or nothing changes if validation fails.
         Car car = em.find(Car.class, carId);
         if (car == null) {
             throw new IllegalArgumentException("Car with ID " + carId + " not found.");
         }
-        
+
         Seller seller = car.getSeller();
         if (seller == null) {
             throw new IllegalStateException("This vehicle does not have an assigned seller.");
         }
 
-        // 2. Retrieve the buyer wrapper profile 
         Buyer buyer = em.find(Buyer.class, buyerId);
         if (buyer == null) {
             throw new IllegalArgumentException("Buyer with ID " + buyerId + " not found.");
         }
 
-        // Business Rule Constraint: Do not allow an account to purchase its own listing
         if (buyer.getAccount().getAid() == seller.getAccount().getAid()) {
             throw new IllegalArgumentException("Operation canceled: You cannot buy your own vehicle.");
         }
 
-        // 3. Locate financial bank records matching both users' unique internal Account IDs
-        List<BankAccount> buyerAccounts = em.createQuery(
-            "FROM BankAccount b WHERE b.account.aid = :aid", BankAccount.class)
-            .setParameter("aid", buyer.getAccount().getAid())
-            .getResultList();
+        Account buyerAccount = buyer.getAccount();
+        Account sellerAccount = seller.getAccount();
 
-        List<BankAccount> sellerAccounts = em.createQuery(
-            "FROM BankAccount b WHERE b.account.aid = :aid", BankAccount.class)
-            .setParameter("aid", seller.getAccount().getAid())
-            .getResultList();
-
-        if (buyerAccounts.isEmpty()) {
-            throw new ch.hevs.exception.BankException("Transaction denied: Buyer possesses no active bank accounts.");
-        }
-        if (sellerAccounts.isEmpty()) {
-            throw new ch.hevs.exception.BankException("Transaction denied: Seller possesses no active bank accounts.");
+        int carPrice = (int) car.getPrice();
+        if (buyerAccount.getBalance() < carPrice) {
+            throw new BankException("Insufficient balance! Car costs " + carPrice
+                    + ", but buyer balance is " + buyerAccount.getBalance());
         }
 
-        BankAccount buyerBankAccount = buyerAccounts.get(0);
-        BankAccount sellerBankAccount = sellerAccounts.get(0);
+        buyerAccount.setBalance(buyerAccount.getBalance() - carPrice);
+        sellerAccount.setBalance(sellerAccount.getBalance() + carPrice);
 
-        // 4. Validate sufficient funds availability
-        int carPrice = (int) car.getPrice(); 
-        if (buyerBankAccount.getSaldo() < carPrice) {
-            throw new ch.hevs.exception.BankException("Insufficient balance! Car costs " 
-                + carPrice + ", but buyer balance is " + buyerBankAccount.getSaldo());
-        }
-
-        // 5. Financial Execution: Send and Receive money between statements
-        buyerBankAccount.setSaldo(buyerBankAccount.getSaldo() - carPrice);
-        sellerBankAccount.setSaldo(sellerBankAccount.getSaldo() + carPrice);
-
-        // 6. Complete Sale: Permanently erase the car from the marketplace catalog 
+        // A successful purchase removes the sold car from the marketplace.
         em.remove(car);
     }
-    
+
+    @Transactional
+    public void removeCarAsAdmin(int carId) {
+        if (request == null || !request.isUserInRole("admin")) {
+            throw new SecurityException("Only users with the admin role can remove cars.");
+        }
+
+        Car car = em.find(Car.class, carId);
+        if (car == null) {
+            throw new IllegalArgumentException("Car with ID " + carId + " not found.");
+        }
+
+        em.remove(car);
+    }
 }
