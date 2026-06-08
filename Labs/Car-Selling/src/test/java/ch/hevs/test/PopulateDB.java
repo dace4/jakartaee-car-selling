@@ -1,6 +1,7 @@
 package ch.hevs.test;
 
 import ch.hevs.businessobject.Account;
+import ch.hevs.businessobject.BankAccount;
 import ch.hevs.businessobject.Buyer;
 import ch.hevs.businessobject.Car;
 import ch.hevs.businessobject.CarBrand;
@@ -55,6 +56,11 @@ public class PopulateDB {
             accountSellerAccount.setEmail("john.doe@gmail.com");
             em.persist(accountSellerAccount);
             
+            BankAccount sellerBankAccount = new BankAccount();
+            sellerBankAccount.setAccount(accountSellerAccount);
+            sellerBankAccount.setSaldo(5000);
+            em.persist(sellerBankAccount);
+            
             Seller seller1 = new Seller();
             seller1.setAccount(accountSellerAccount);
             em.persist(seller1);
@@ -78,6 +84,11 @@ public class PopulateDB {
             buyerAccount.setPhoneNumber("+41790052354");
             buyerAccount.setEmail("alice.mcscotty@gmx.com");
             em.persist(buyerAccount);
+            
+            BankAccount buyerBankAccount = new BankAccount();
+            buyerBankAccount.setAccount(buyerAccount);
+            buyerBankAccount.setSaldo(60000);
+            em.persist(buyerBankAccount);
             
             Buyer buyer1 = new Buyer();
             buyer1.setAccount(buyerAccount);
