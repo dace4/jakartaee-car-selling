@@ -95,4 +95,16 @@ public class Account {
     public void setBuyer(Buyer buyer) {
         this.buyer = buyer;
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "aid=" + aid +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", phoneNumber='" + getPhoneNumber() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
 }

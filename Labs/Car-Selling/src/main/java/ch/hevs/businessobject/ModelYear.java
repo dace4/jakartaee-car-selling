@@ -31,4 +31,12 @@ public class ModelYear {
         this.year = year;
     }
 
+    @Override
+    public String toString() {
+        return "ModelYear{" +
+                "mid=" + mid +
+                ", year=" + year +
+                '}';
+    }
+
 }

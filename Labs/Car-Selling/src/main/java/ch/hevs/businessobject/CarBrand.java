@@ -31,4 +31,12 @@ public class CarBrand {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "CarBrand{" +
+                "cbid=" + cbid +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
 }

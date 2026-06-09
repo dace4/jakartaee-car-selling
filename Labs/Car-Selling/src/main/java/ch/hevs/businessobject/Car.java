@@ -112,4 +112,20 @@ public class Car {
     public void setHp(int hp) {
         this.hp = hp;
     }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "cid=" + cid +
+                ", brand=" + (carBrand != null ? carBrand.getName() : null) +
+                ", color=" + (color != null ? color.getColorName() : null) +
+                ", year=" + (modelYear != null ? modelYear.getYear() : null) +
+                ", seller=" + (seller != null && seller.getAccount() != null
+                        ? seller.getAccount().getFirstname() + " " + seller.getAccount().getLastname()
+                        : null) +
+                ", miles=" + miles +
+                ", price=" + price +
+                ", hp=" + hp +
+                '}';
+    }
 }
