@@ -43,7 +43,8 @@
     </web-resource-collection>
     <auth-constraint>
       <role-name>admin</role-name>
-      <role-name>visitor</role-name>
+      <role-name>buyer</role-name>
+      <role-name>seller</role-name>
     </auth-constraint>
   </security-constraint>
   <login-config>
@@ -54,7 +55,10 @@
     <role-name>admin</role-name>
   </security-role>
   <security-role>
-    <role-name>visitor</role-name>
+    <role-name>buyer</role-name>
+  </security-role>
+  <security-role>
+    <role-name>seller</role-name>
   </security-role>
   <env-entry>
     <env-entry-name>jsf/ClientSideSecretKey</env-entry-name>

@@ -65,6 +65,10 @@ public class CarSelling implements Serializable {
 
     @Transactional
     public void addCar(int sellerId, int carBrandId, int colorId, int modelYearId, int miles, float price, int hp) {
+        if (request == null || (!request.isUserInRole("seller") && !request.isUserInRole("admin"))) {
+            throw new SecurityException("Only seller or admin users can add cars.");
+        }
+
         Seller seller = em.find(Seller.class, sellerId);
         CarBrand carBrand = em.find(CarBrand.class, carBrandId);
         Color color = em.find(Color.class, colorId);
@@ -104,6 +108,10 @@ public class CarSelling implements Serializable {
     public void buyCar(int carId, int buyerId) {
         // Buying a car must be atomic: either money moves and the car is removed,
         // or nothing changes if validation fails.
+        if (request == null || (!request.isUserInRole("buyer") && !request.isUserInRole("admin"))) {
+            throw new SecurityException("Only buyer or admin users can buy cars.");
+        }
+
         Car car = em.find(Car.class, carId);
         if (car == null) {
             throw new IllegalArgumentException("Car with ID " + carId + " not found.");
