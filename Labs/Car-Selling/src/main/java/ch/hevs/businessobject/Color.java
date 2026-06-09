@@ -30,4 +30,12 @@ public class Color {
     public void setColorName(String colorName) {
         this.colorName = colorName;
     }
+
+    @Override
+    public String toString() {
+        return "Color{" +
+                "coid=" + coid +
+                ", colorName='" + colorName + '\'' +
+                '}';
+    }
 }

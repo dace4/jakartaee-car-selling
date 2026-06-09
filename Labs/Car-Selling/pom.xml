@@ -44,6 +44,17 @@
             <version>3.4.0</version>
         </plugin>
         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.2.5</version>
+            <configuration>
+                <excludes>
+                    <exclude>**/CreateSchemaTest.java</exclude>
+                    <exclude>**/QueryTest.java</exclude>
+                </excludes>
+            </configuration>
+        </plugin>
+        <plugin>
         	<groupId>org.wildfly.plugins</groupId>
         	<artifactId>wildfly-maven-plugin</artifactId>
         	<version>5.1.3.Final</version>

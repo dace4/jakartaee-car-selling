@@ -28,4 +28,12 @@ public class Buyer {
     public void setAccount(Account account) {
         this.account = account;
     }
+
+    @Override
+    public String toString() {
+        return "Buyer{" +
+                "bid=" + bid +
+                ", account=" + account +
+                '}';
+    }
 }
