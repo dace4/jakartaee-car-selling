@@ -123,6 +123,22 @@ public class CarSellingBean implements Serializable {
         return FacesContext.getCurrentInstance().getExternalContext().isUserInRole("admin");
     }
 
+    public boolean isBuyer() {
+        return FacesContext.getCurrentInstance().getExternalContext().isUserInRole("buyer");
+    }
+
+    public boolean isSeller() {
+        return FacesContext.getCurrentInstance().getExternalContext().isUserInRole("seller");
+    }
+
+    public boolean isBuyerOrAdmin() {
+        return isBuyer() || isAdmin();
+    }
+
+    public boolean isSellerOrAdmin() {
+        return isSeller() || isAdmin();
+    }
+
     private void resetNewCarForm() {
         selectedSellerId = 0;
         selectedCarBrandId = 0;

@@ -14,7 +14,10 @@
 
         <h:form>
             <h3>Add a Car</h3>
-            <h:panelGrid columns="2" cellpadding="8" style="margin-bottom:16px;">
+            <h:outputText value="Only seller or admin users can add cars."
+                rendered="#{not carSellingBean.sellerOrAdmin}" />
+            <h:panelGrid columns="2" cellpadding="8" style="margin-bottom:16px;"
+                rendered="#{carSellingBean.sellerOrAdmin}">
                 <h:outputLabel for="seller" value="Seller" />
                 <h:selectOneMenu id="seller" value="#{carSellingBean.selectedSellerId}">
                     <f:selectItem itemValue="0" itemLabel="Select a seller" />
@@ -53,12 +56,16 @@
                 <h:outputLabel for="hp" value="Horsepower" />
                 <h:inputText id="hp" value="#{carSellingBean.newCarHp}" />
             </h:panelGrid>
-            <h:commandButton value="Add car" action="#{carSellingBean.addCar}" />
+            <h:commandButton value="Add car" action="#{carSellingBean.addCar}"
+                rendered="#{carSellingBean.sellerOrAdmin}" />
             <br />
             <br />
 
             <h3>Buy a Car</h3>
-            <h:panelGrid columns="2" cellpadding="8" style="margin-bottom:16px;">
+            <h:outputText value="Only buyer or admin users can buy cars."
+                rendered="#{not carSellingBean.buyerOrAdmin}" />
+            <h:panelGrid columns="2" cellpadding="8" style="margin-bottom:16px;"
+                rendered="#{carSellingBean.buyerOrAdmin}">
                 <h:outputLabel for="buyer" value="Buyer" />
                 <h:selectOneMenu id="buyer" value="#{carSellingBean.selectedBuyerId}">
                     <f:selectItem itemValue="0" itemLabel="Select a buyer" />
@@ -109,7 +116,8 @@
                 </h:column>
                 <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <h:commandButton value="Buy" action="#{carSellingBean.buyCar(car.cid)}" />
+                    <h:commandButton value="Buy" action="#{carSellingBean.buyCar(car.cid)}"
+                        rendered="#{carSellingBean.buyerOrAdmin}" />
                     <h:commandButton value="Remove"
                         action="#{carSellingBean.removeCarAsAdmin(car.cid)}"
                         rendered="#{carSellingBean.admin}" />
